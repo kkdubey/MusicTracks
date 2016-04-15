@@ -6,7 +6,7 @@
         .config(config)
         .run(run);
 
-    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', 'angularjs-dropdown-multiselect', 'ui.bootstrap'];
+    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
     function config($routeProvider, $locationProvider, $httpProvider) {
         $routeProvider
             .when('/track', {
@@ -21,9 +21,9 @@
                 controllerAs: 'vm'
             })
 
-            .when('/register', {
-                controller: 'RegisterController',
-                templateUrl: 'register/register.view.html',
+            .when('/genre', {
+                controller: 'GenreController',
+                templateUrl: 'genre.html',
                 controllerAs: 'vm'
             })
 
