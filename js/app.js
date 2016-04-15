@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute'])
+        .module('app', ['ngRoute', 'angularjs-dropdown-multiselect', 'ui.bootstrap', 'angular-input-stars'])
         .config(config)
         .run(run);
 
@@ -24,6 +24,12 @@
             .when('/genre', {
                 controller: 'GenreController',
                 templateUrl: 'genre.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/addgenre', {
+                controller: 'AddGenreController',
+                templateUrl: 'addgenre.html',
                 controllerAs: 'vm'
             })
 
