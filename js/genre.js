@@ -9,6 +9,7 @@
     function GenreController($location, $http) {
         var vm = this;
         vm.Genres = [];
+        vm.SearchText = '';
         vm.EditGenre = function(Genre) {
             $location.path('/addgenre').search({id: Genre.id, name: Genre.name});
         };

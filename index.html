@@ -29,9 +29,16 @@
 <!-- CACHE FILE: track.html -->
 <script type="text/ng-template" id="track.html">
 	<div class="panel panel-primary">
-	  <div class="panel-body">
+	  <div class="panel-body">	  
+		<div class="row">
+			<div class="col-lg-12 col-xs-12 left-inner-addon">
+			 	<i class="icon-search"></i>
+				<input type="search" class="form-control" placeholder="Search" ng-model="vm.SearchText" />
+				<br />
+			</div>
+		</div>
 		<ul class="list-group">
-		  <li class="list-group-item" ng-repeat="track in vm.Tracks" ng-click="vm.EditTrack(track)" >{{track.title}} [{{vm.GetGenreFromTrack(track)}}]
+		  <li class="list-group-item" ng-repeat="track in vm.Tracks | filter: vm.SearchText" ng-click="vm.EditTrack(track)" >{{track.title}} [{{vm.GetGenreFromTrack(track)}}]
 		  <input-stars max="5" icon-full="fa-star" icon-base="fa fa-fw" icon-empty="fa-star-o" ng-model="track.rating"></input-stars>
 		  </li>
 		</ul>
@@ -74,9 +81,16 @@
 <!-- CACHE FILE: track.html -->
 <script type="text/ng-template" id="genre.html">
 	<div class="panel panel-primary">
-	  <div class="panel-body">
+	  <div class="panel-body">  
+		<div class="row">
+			<div class="col-lg-12 col-xs-12 right-inner-addon">
+			 	<i class="icon-search"></i>
+				<input type="search" class="form-control" placeholder="Search" ng-model="vm.SearchText"></input>
+				<br />
+			</div>
+		</div>
 		<ul class="list-group">
-		  <li class="list-group-item" ng-repeat="genre in vm.Genres" ng-click="vm.EditGenre(genre)">{{genre.name}}</li>
+		  <li class="list-group-item" ng-repeat="genre in vm.Genres | filter: vm.SearchText" ng-click="vm.EditGenre(genre)">{{genre.name}}</li>
 		</ul>
 	  </div>
 	  <div>

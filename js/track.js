@@ -9,6 +9,7 @@
     function TrackController($location, $http) {
         var vm = this;
         vm.Tracks = [];
+        vm.SearchText = '';
         vm.GetGenreFromTrack = function(track) {
             var genre = '';
             angular.forEach(track.genres, function(value, key) {
